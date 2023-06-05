@@ -7,12 +7,12 @@ type props = {
 }
 
 
-export const Header = ({ clickHandler, text }: props) => {
+export const Header = ({ text }: props) => {
     return (
         <>
             <div className="header-container">
                 <div className="title">
-                    <div onClick={clickHandler}>
+                    <div>
                         <Burger />
                     </div>
                     <Link to='/'> <i className="fa-sharp fa-solid fa-house"></i> </Link>
