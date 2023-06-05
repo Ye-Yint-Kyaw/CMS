@@ -25,7 +25,7 @@ export const DashboardContent = () => {
                         Authorization: `Bearer ${token}`,
                     }
                 });
-            const responseUsers = await axios.get("http://127.0.0.1:8000/api/projects",
+            const responseUsers = await axios.get("http://127.0.0.1:8000/api/users",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,

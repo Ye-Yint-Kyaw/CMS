@@ -3,7 +3,6 @@
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\ContractController;
-use App\Http\Controllers\Api\FileDownloadController as ApiFileDownloadController;
 use App\Http\Controllers\Api\InvoiceController;
 use App\Http\Controllers\Api\PermissionController;
 use App\Http\Controllers\Api\ProjectController;
@@ -38,7 +37,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware(['cors', 'auth:sanctum'])->group(function () {
     Route::apiResource('roles', RoleController::class);
     Route::apiResource('permissions', PermissionController::class);
-
     Route::apiResource('users', UserController::class);
     Route::apiResource('categories', CategoryController::class);
     Route::get('/categoriesByName', [CategoryController::class, 'categoriesByName']);

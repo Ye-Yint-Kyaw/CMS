@@ -17,7 +17,6 @@ import { CategoryCreate } from "./pages/category_create/categoryCreate";
 import CategoryEdit from "./pages/category_edit/categoryEdit";
 import { CategoryDelete } from "./pages/category_edit/category_delete";
 import { ProjectEdit } from "./pages/project-edit/projectEdit";
-import { QuotationEdit } from "./pages/quotation-edit/quotationEdit";
 import { QuotationList } from "./pages/quotation_list/quotationList";
 import { ClientCreate } from "./pages/client_create/clientCreate";
 import { UserCreate } from "./pages/user_create/userCreate";
@@ -158,13 +157,6 @@ let routes = [
     backend_path: 'quotation-create',
     element: (
       <QuotationList />
-    )
-  },
-  {
-    path: '/quotation-edit',
-    backend_path: 'quotation-edit',
-    element: (
-      <QuotationEdit />
     )
   },
   {

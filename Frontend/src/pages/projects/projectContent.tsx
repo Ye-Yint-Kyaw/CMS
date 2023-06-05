@@ -64,7 +64,9 @@ export const ProjectContent = () => {
       <div className="table-wrap" style={{ width: '97%' }}>
         <div className="table-bar">
           <div className="pro_listincliinfo">
-            <span className="material-symbols-outlined">person</span>
+            <span className="material-symbols-outlined">
+              folder_open
+            </span>
             <p>All Projects</p>
           </div>
         </div>

@@ -20,7 +20,7 @@ const sidebar_routes = [
         path: "/projects",
         backend_path: "projects",
         name: "Projects",
-        icon: <i className="fa-solid fa-circle-info"></i>
+        icon: <i className="fa-solid fa-sheet-plastic"></i>
     },
     {
         path: "/services",

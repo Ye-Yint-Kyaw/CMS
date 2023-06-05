@@ -423,6 +423,8 @@ input:checked+.slider:before {
 
 
 .accordion {
+
+
     h1 {
         font-size: 25px;
         font-weight: 700;
@@ -432,6 +434,7 @@ input:checked+.slider:before {
 
     .accordion-item {
         border-bottom: 1px solid #ccc;
+        padding: 7px 0;
 
         &:last-child {
             border-bottom: none;
@@ -447,6 +450,7 @@ input:checked+.slider:before {
 
             h3 {
                 margin: 0;
+                font-weight: 500;
             }
 
             .accordion-icon {
@@ -462,6 +466,12 @@ input:checked+.slider:before {
         .accordion-content {
             padding: 10px;
             background-color: #f5f5f5;
+
+            small {
+                font-weight: 500;
+                font-size: 14px;
+                font-style: italic;
+            }
 
             div {
                 a {
