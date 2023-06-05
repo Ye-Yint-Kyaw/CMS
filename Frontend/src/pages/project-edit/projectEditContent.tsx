@@ -266,7 +266,7 @@ export const ProjectEditContent: React.FC = () => {
                 </div>
               </div>
               <div className="allbtn">
-                <Button type="submit" className="button" text="ADD" />
+                <Button type="submit" className="button" text="UPDATE" />
                 <Link to={`/client-project-lists?id=${userID}`}>
                   <Button type="button" className="button" text="BACK" />
                 </Link>

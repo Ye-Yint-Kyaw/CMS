@@ -57,24 +57,27 @@ export const Login: React.FC<Props> = ({ }) => {
       localStorage.setItem('token', token);
       localStorage.setItem('role_id', role_id);
       localStorage.setItem("id", id);
+      const expirationTime = 1 * 24 * 60 * 60 * 1000;
       setTimeout(() => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('role_id');
-      }, 1200000);
+        localStorage.removeItem("token");
+        localStorage.removeItem("role_id");
+        localStorage.removeItem("name");
+        localStorage.removeItem("id");
+        localStorage.removeItem("project_id");
+        window.location.reload();
+        window.location.href = '/';
+      }, expirationTime);
       setIsLoading(false);
       window.location.reload();
       const apiSuccessMsg = response.data.message;
 
       setSuccessMsg(apiSuccessMsg);
-      // setSuccessMessage(message);
       setShowAlert(true);
 
-      // Clear any existing timer
       if (alertTimerRef.current) {
         window.clearTimeout(alertTimerRef.current);
       }
 
-      // Start a new timer to close the alert after 3 seconds
       alertTimerRef.current = window.setTimeout(() => {
         setShowAlert(false);
         setSuccessMsg(null);
@@ -90,12 +93,6 @@ export const Login: React.FC<Props> = ({ }) => {
       setIsLoading(false);
     }
   };
-  // useEffect(() => {
-  //   if (successMsg !== '') {
-  //     alert(successMsg);
-  //   }
-  // }, [successMsg]);
-
   return (
     <div className="login">
       <div className="container login-form ">
