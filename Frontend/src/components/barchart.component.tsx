@@ -32,12 +32,10 @@ export const BarChart: React.FC = () => {
       });
 
       const data = response.data.data;
-      //console.log(data);
 
       const labels = data.map((item: any) => item.month);
-      //console.log(labels);
       const customerCount = data.map((item: any) => item.customer_count);
-      //console.log(customerCount);
+
 
       setChartData({
         labels,

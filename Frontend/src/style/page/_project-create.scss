@@ -1,27 +1,17 @@
-.client_phone_parent{
-    div{
+.client_phone_parent {
+    div {
         display: flex;
         align-items: center;
-        .maintenence{
-           width: 15%;
+
+        .maintenence {
+            width: 15%;
             padding: 0;
             margin: 0;
             height: 20px;
         }
     }
 }
-.top{
+
+.top {
     margin-top: 0;
 }
-
-// .form-wrap{
-//     form{
-//         .box{
-//             display: flex;
-//             justify-content: space-between;
-//         }
-//     }
-// }
-// .left{
-//     width: 50%;
-// }

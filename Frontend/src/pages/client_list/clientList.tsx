@@ -16,7 +16,7 @@ export const ClientList = () => {
       <div className='pj-container'>
         <div className={`bar-div ${sidebarOpen ? '' : 'close'} `}><Sidebar /></div>
         <div className='content'>
-          <div> <Header clickHandler={handleBurgerClick} text='Clients List' /> </div>
+          <div> <Header clickHandler={handleBurgerClick} text='Customers List' /> </div>
           <div className='board-div'><ClientListContent /></div>
         </div>
 

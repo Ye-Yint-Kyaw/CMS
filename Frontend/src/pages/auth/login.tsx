@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import axios from 'axios';
 import importImg from '../../img/ace_plus_logo.png';
 import { Button } from '../../components/button.component';
 import { Input } from '../../components/input.component';
-import { Alert } from 'react-bootstrap';
 
 interface Props {
   email: string;

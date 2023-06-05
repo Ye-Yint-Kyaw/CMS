@@ -1,48 +1,52 @@
-.permissionlist{
-    // background:red;
-    padding:10px 40px;
-}
-.ul_perlist{
-    font-size:1.1em;
-}
-.checkbox_ulist{
-    width:15px ;
-    margin:0;
-    height:15px;
-}
-.main_ulist li{
-    margin-left:10px;
-    
-}
-.permission_star{
-    padding-left:10px;
-}
-.text-danger{
-    color:red;
-}
-.main_ulist{
-    // background:pink;
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    padding-left:10px;
-    margin-bottom:10px;
+.permissionlist {
+    padding: 10px 40px;
 }
 
-.create_client_number{
-    // background:red;
-    display:flex;
+.ul_perlist {
+    font-size: 1.1em;
+}
+
+.checkbox_ulist {
+    width: 15px;
+    margin: 0;
+    height: 15px;
+}
+
+.main_ulist li {
+    margin-left: 10px;
 
 }
-.input_address{
-    margin:5px 0px 0px 0px !important;
-    width:100%;
+
+.permission_star {
+    padding-left: 10px;
 }
-.input_phonenumber{
-    width:50%;
-    // background:green;
+
+.text-danger {
+    color: red;
 }
-.input_phonenumber input{
-    width:60%;
-    // background:blue;
+
+.main_ulist {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.create_client_number {
+    display: flex;
+
+}
+
+.input_address {
+    margin: 5px 0px 0px 0px !important;
+    width: 100%;
+}
+
+.input_phonenumber {
+    width: 50%;
+}
+
+.input_phonenumber input {
+    width: 60%;
 }

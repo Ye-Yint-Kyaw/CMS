@@ -204,8 +204,8 @@ export const ProjectDetailContent: React.FC<pj_pass_data> = ({ }) => {
                                 <div className="category_list">
                                     <h1>Report</h1>
                                     <h2> {pjdata && pjdata.title} </h2>
-                                    <h3>Number Of Quotations:  <span>6</span> </h3>
-                                    <h3>Number Of Contracts:  <span>2</span> </h3>
+                                    <h3>Number Of Quotations:  <span>{QuotationData.length}</span> </h3>
+                                    <h3>Number Of Contracts:  <span>{ContractAllData.length}</span> </h3>
                                 </div>
 
                             </div>

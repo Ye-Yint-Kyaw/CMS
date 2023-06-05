@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 
 interface SelectBoxProps {
   options: string[];
-  name:string;
-  value:any;
+  name: string;
+  value: any;
   onChange: (selectedOption: string, selectedIndex: number) => void;
 }
 
-export const SelectBox: React.FC<SelectBoxProps> = ({name,value, options, onChange }) => {
+export const SelectBox: React.FC<SelectBoxProps> = ({ name, value, options, onChange }) => {
   const [selectedOption, setSelectedOption] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
@@ -26,6 +26,6 @@ export const SelectBox: React.FC<SelectBoxProps> = ({name,value, options, onChan
           {option}
         </option>
       ))}
-    </select> 
+    </select>
   );
 };

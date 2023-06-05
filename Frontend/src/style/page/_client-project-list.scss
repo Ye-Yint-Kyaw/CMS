@@ -75,10 +75,6 @@ table {
         background-color: #ffffff;
     }
 
-    // tr:nth-child(odd) {
-    //     background-color: silver;
-    // }
-
     .list-header {
         text-align: center;
     }
@@ -87,9 +83,6 @@ table {
         transition: 0.4s all ease-in-out;
     }
 
-    // tr:hover{
-    //     background-color: #acacac;;
-    // }
     td {
         .link {
             display: block;
@@ -113,9 +106,6 @@ table {
     }
 
     .td-category {
-
-        // display: flex;
-        // flex-wrap: wrap;
         span {
             background: #287e00;
             border-radius: 8px;

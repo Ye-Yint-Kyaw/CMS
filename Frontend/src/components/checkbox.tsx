@@ -1,25 +1,16 @@
-import React, { useState } from "react";
-
 interface CheckboxProps {
-    className:string;
+  className: string;
   label: string;
-  name:string
-  checked:boolean;
+  name: string
+  checked: boolean;
   onChange: (checked: boolean) => void;
 }
 
-export const Checkbox: React.FC<CheckboxProps> = ({label,checked,name,className, onChange }) => {
-  // const [checked, setChecked] = useState<boolean>(false);
+export const Checkbox: React.FC<CheckboxProps> = ({ label, checked, name, onChange }) => {
   const handleChange = () => {
     const newChecked = !checked;
     onChange(newChecked);
   };
-  // const handleChange = () => {
-  //   const newChecked = !checked;
-  //   setChecked(newChecked);
-  //   onChange(newChecked);
-  // };
-
   return (
     <div>
       <label>
@@ -29,5 +20,3 @@ export const Checkbox: React.FC<CheckboxProps> = ({label,checked,name,className,
     </div>
   );
 };
-
-// export default Checkbox;

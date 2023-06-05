@@ -23,10 +23,6 @@ export const ContractAll: React.FC = () => {
       })
       .then((response: AxiosResponse) => {
         setContractData(response.data.data);
-<<<<<<< HEAD
-
-=======
->>>>>>> 4d6eac444645a90ec635f86d171e27625f352265
       })
       .catch((error: any) => {
         if (error.response && error.response.data && error.response.data.message) {

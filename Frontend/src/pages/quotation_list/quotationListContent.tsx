@@ -93,13 +93,6 @@ export const QuotationListContent: React.FC = () => {
       });
   };
 
-  // function handleChatboxChange(checked: boolean) {
-  //   setisCheckbox(checked);
-  // }
-  // if (isLoading) {
-  //   return <div className="l-width"><p className="loading"></p></div>
-  // }
-
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files && event.target.files[0];
     setQuotation(file || null);

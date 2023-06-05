@@ -4,14 +4,12 @@ import { Project } from "./pages/projects/project";
 import { Error } from "./pages/notfound";
 import { Login } from "./pages/auth/login";
 import { UserEdit } from "./pages/user_edit/userEdit";
-import { UserDelete } from "./pages/user_edit/userDelete";
 import { ProjectDetail } from "./pages/project_detail/projectDetail";
 import { ClientProjectList } from "./pages/client_project_list/clientProjectList";
 import { ClientList } from "./pages/client_list/clientList";
 import { ProjectCreate } from "./pages/project_create/projectCreate";
 import { UserList } from "./pages/user_list/userList";
 import { ClientEdit } from "./pages/client_edit/clientEdit";
-import { ClientDelete } from "./pages/client_edit/client_delete";
 import { useEffect, useState } from "react";
 import Category from "./pages/category_list/categoryList";
 import { ContractCreate } from "./pages/contract/contractCreate";
@@ -135,11 +133,6 @@ let routes = [
     element: <ClientEdit />
   },
   {
-    path: "/client-delete/:customerId",
-    backend_path: "client-delete",
-    element: <ClientDelete />
-  },
-  {
     path: '/login',
     backend_path: 'login',
     element: (
@@ -158,13 +151,6 @@ let routes = [
     backend_path: 'user-edit',
     element: (
       <UserEdit />
-    )
-  },
-  {
-    path: '/user-delete/:userId',
-    backend_path: 'user-delete',
-    element: (
-      <UserDelete />
     )
   },
   {
@@ -221,12 +207,6 @@ export const Routers = () => {
         let avialable_routes = routes.filter(route => backend_routes.includes(route.backend_path)).map(route => ({ element: route.element, path: route.path }));
         setRoles(prev => [...avialable_routes, ...prev])
       } catch (error: any) {
-        // if (error.response && error.response.data && error.response.data.message) {
-        //   const apiErrorMessage = error.response.data.message;
-        //   setErrMsg(apiErrorMessage);
-        // } else {
-        //   setErrMsg('An error has occurred during the API request.');
-        // }
       } finally {
         setIsLoading(false);
       }
@@ -254,7 +234,6 @@ export const Routers = () => {
           </Routes>
         </Router>
       )}
-      {/* <p className="error-message">{errMsg && errMsg}</p> */}
     </>
   )
 }
