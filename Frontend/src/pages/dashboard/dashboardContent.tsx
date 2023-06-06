@@ -31,14 +31,18 @@ export const DashboardContent = () => {
                         Authorization: `Bearer ${token}`,
                     }
                 });
+            // setIsLoading(false)
             setCustomers(responseCustomer.data.data.length)
             setProjects(responseProjects.data.data.length)
             setUsers(responseUsers.data.data.length)
-            setIsLoading(false)
+
 
         }
         fetchData();
     }, [token]);
+    setTimeout(() => {
+        setIsLoading(false)
+    }, 500)
     if (isLoading) {
         return <div className="l-width"><p className="loading"></p></div>
     }

@@ -74,7 +74,7 @@ export const ClientProjectListContent = () => {
   if (error) {
     return <div>Error: {error}</div>;
   }
-  let totalItems = clientproject.length;
+  let totalItems = clientproject.length == 0 ? 1 : clientproject.length;
   const totalPages = Math.ceil(totalItems / perPage);
   const indexOfLastItem = currentPage * perPage;
   const indexOfFirstItem = indexOfLastItem - perPage;

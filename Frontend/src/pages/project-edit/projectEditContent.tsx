@@ -113,6 +113,7 @@ export const ProjectEditContent: React.FC = () => {
 
   const handleProjectUpdate = (e: React.FormEvent) => {
     e.preventDefault();
+    setErrors({});
     let validationErrors: any = {};
     if (title.trim() === "") {
       validationErrors.title = "Title is required *";
@@ -126,8 +127,12 @@ export const ProjectEditContent: React.FC = () => {
     if (!category_id) {
       validationErrors.category = "Category is required *";
     }
+    if (users.length === 1 || users.length < 1) {
+      validationErrors.dev = "Please choose at least one developer *";
+    }
 
     if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
       return;
     }
 
@@ -155,7 +160,6 @@ export const ProjectEditContent: React.FC = () => {
         }
       })
   };
-
   return (
     <>
       <div className="register add-middle">
@@ -263,6 +267,8 @@ export const ProjectEditContent: React.FC = () => {
                       }
                     </div>
                   </div>
+                  <p className="error-message dev">{errors.dev && errors.dev}</p>
+                  <p className="error-message">{errMsg && errMsg}</p>
                 </div>
               </div>
               <div className="allbtn">

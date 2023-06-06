@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../img/sidebar/logo.png';
-import { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import axios from 'axios';
 
 const sidebar_routes = [
@@ -63,13 +63,11 @@ export const Sidebar = () => {
         }
         fetchData();
     }, []);
-
     const avialable_routes: any[] = useMemo(() => sidebar_routes.filter(route => role.includes(route.backend_path)), [role]);
-
     return (
         <>
             <div className="sidebar-container">
-                <h1> <img src={logo} alt="ACE PLUS LOGO" className='sidebar-logo' /> </h1>
+                <h1> <img src={logo} alt="ACE PLUS LOGO" className='sidebar-logo' /></h1>
                 <ul>
                     {
                         avialable_routes.map(route => (
@@ -80,6 +78,7 @@ export const Sidebar = () => {
                                 >
                                     {route.icon} {route.name}
                                 </Link>
+
                             </li>
                         ))
                     }

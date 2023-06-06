@@ -163,7 +163,7 @@ export const ProjectDetailContent: React.FC<pj_pass_data> = ({ }) => {
     };
     const filteredAllContracts = ContractAllData.filter((contract: any) => contract.contract_url !== null);
     const filteredContracts = filteredAllContracts.map((c: any) => c.contract);
-    const assignedDev = devData.filter((dev: any) => dev.id !== 5);
+    const assignedDev = devData.filter((dev: any) => dev.role_id !== '5');
     return (
 
         <>
@@ -188,9 +188,10 @@ export const ProjectDetailContent: React.FC<pj_pass_data> = ({ }) => {
                                     <h3>ASSIGNED DEVELOPERS FOR THIS PROJECT</h3>
                                     <ul>
                                         {
-                                            devData.filter((dev: any) => dev.id !== 5).map((devName: any) =>
+                                            assignedDev.map((devName: any) =>
                                                 <li key={devName.id}> {devName.name} </li>
                                             )
+
                                         }
                                     </ul>
 

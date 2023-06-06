@@ -31,7 +31,7 @@ class ProjectRequest extends FormRequest
             'category_id' => 'required',
             'users' => 'required|array',
             'users.*' => 'exists:users,id', // Assuming users is an array of user IDs
-            //'user_id' => 'required|array',
+            'num_id' => ''
         ];
     }
 }

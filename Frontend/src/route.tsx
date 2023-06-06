@@ -198,6 +198,7 @@ export const Routers = () => {
         const backend_routes = response.data.data.rolePermissions;
         let avialable_routes = routes.filter(route => backend_routes.includes(route.backend_path)).map(route => ({ element: route.element, path: route.path }));
         setRoles(prev => [...avialable_routes, ...prev])
+
       } catch (error: any) {
       } finally {
         setIsLoading(false);
@@ -205,10 +206,10 @@ export const Routers = () => {
     };
     fetchData();
   }, [role_id, token]);
-
   const routeList = createBrowserRouter(roles);
+
   if (isLoading) {
-    return <div className="c-width"><p className="loading"></p></div>
+    return <div><p></p></div>
   }
   return (
     <>

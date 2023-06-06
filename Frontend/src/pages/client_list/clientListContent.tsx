@@ -70,7 +70,7 @@ export const ClientListContent = () => {
     return <div>We are having trouble when fetching data. Please try again later.</div>;
   }
 
-  let totalItems = data.data.length;
+  let totalItems = data.data.length == 0 ? 1 : data.data.length;
   if (searchResults.length > 0) {
     totalItems = searchResults.length;
   }
@@ -117,29 +117,35 @@ export const ClientListContent = () => {
               </tr>
             </thead>
             <tbody>
-              {(filter && currentSearchItems.length > 0 ? currentSearchItems : currentItems).map(
-                (item: any, index: number) => {
-                  const rowNumber = (currentPage - 1) * perPage + index + 1;
-                  return (
-                    <tr key={item.id}>
-                      <td>{rowNumber}</td>
-                      <td>{item.name}</td>
-                      <td>{item.email}</td>
-                      <td>{item.phone}</td>
-                      <td>{item.contact_person}</td>
-                      <td className="td-category">{item.position}</td>
-                      <td>
-                        <Link to={`/client-edit/${item.id}`}>
-                          <i className="fa-solid fa-pen-to-square update"></i>
-                        </Link>
-                        <Link to={`/client-project-lists?id=${item.id}`}>
-                          <i className="fa-solid fa-angles-right more"></i>
-                        </Link>
-                      </td>
-                    </tr>
-                  );
-                }
-              )}
+              {
+                data.data.length === 0 ? (
+                  <tr>
+                    <td colSpan={7}>No Customers Found</td>
+                  </tr>
+                ) :
+                  (filter && currentSearchItems.length > 0 ? currentSearchItems : currentItems).map(
+                    (item: any, index: number) => {
+                      const rowNumber = (currentPage - 1) * perPage + index + 1;
+                      return (
+                        <tr key={item.id}>
+                          <td>{rowNumber}</td>
+                          <td>{item.name}</td>
+                          <td>{item.email}</td>
+                          <td>{item.phone}</td>
+                          <td>{item.contact_person}</td>
+                          <td className="td-category">{item.position}</td>
+                          <td>
+                            <Link to={`/client-edit/${item.id}`}>
+                              <i className="fa-solid fa-pen-to-square update"></i>
+                            </Link>
+                            <Link to={`/client-project-lists?id=${item.id}`}>
+                              <i className="fa-solid fa-angles-right more"></i>
+                            </Link>
+                          </td>
+                        </tr>
+                      );
+                    }
+                  )}
             </tbody>
           </table>
           <div className="pagination">

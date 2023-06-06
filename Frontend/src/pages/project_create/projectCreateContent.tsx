@@ -129,6 +129,9 @@ export const ProjectCreateContent: React.FC = () => {
     if (!category_id) {
       validationErrors.category = "Category is required *";
     }
+    if (users.length === 1 || users.length < 1) {
+      validationErrors.dev = "Please choose at least one developer *";
+    }
 
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
@@ -259,10 +262,10 @@ export const ProjectCreateContent: React.FC = () => {
                           )
                         })
                       }
-                      <p className="error-message">{errors.address && errors.address}</p>
-                      <p className="error-message">{errMsg && errMsg}</p>
                     </div>
                   </div>
+                  <p className="error-message dev">{errors.dev && errors.dev}</p>
+                  <p className="error-message">{errMsg && errMsg}</p>
                 </div>
               </div>
               <div className="allbtn">

@@ -158,7 +158,7 @@ export const UserListContent = () => {
                 <th>Contact Mail</th>
                 <th>Contact Phone</th>
                 <th>Position</th>
-                <th>UPDATE</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>

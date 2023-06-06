@@ -65,7 +65,7 @@ export const CategoryListContent = () => {
   if (error) {
     return <div>Error: {error}</div>;
   }
-  let totalItems = data.data.length;
+  let totalItems = data.data.length == 0 ? 1 : data.data.length;
   if (searchResults.length > 0) {
     totalItems = searchResults.length;
   }
@@ -108,19 +108,25 @@ export const CategoryListContent = () => {
               </tr>
             </thead>
             <tbody>
-              {(filter && currentSearchItems.length > 0 ? currentSearchItems : currentItems).map((item: any, index: number) => {
-                return (
-                  <tr key={item.id}>
-                    <td>{index + 1}</td>
-                    <td>{item.category}</td>
-                    <td>
-                      <Link to={`/category-edit/${item.id}`}>
-                        <i className="fa-solid fa-pen-to-square update"></i>
-                      </Link>
-                    </td>
+              {
+                data.data.length === 0 ? (
+                  <tr>
+                    <td colSpan={3}>No Categories Found</td>
                   </tr>
-                );
-              })}
+                ) :
+                  (filter && currentSearchItems.length > 0 ? currentSearchItems : currentItems).map((item: any, index: number) => {
+                    return (
+                      <tr key={item.id}>
+                        <td>{index + 1}</td>
+                        <td>{item.category}</td>
+                        <td>
+                          <Link to={`/category-edit/${item.id}`}>
+                            <i className="fa-solid fa-pen-to-square update"></i>
+                          </Link>
+                        </td>
+                      </tr>
+                    );
+                  })}
             </tbody>
           </table>
           <div className="pagination">

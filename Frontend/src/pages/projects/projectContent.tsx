@@ -52,7 +52,7 @@ export const ProjectContent = () => {
   if (error) {
     return <div>Error: {error}</div>;
   }
-  let totalItems = projects.length;
+  let totalItems = projects.length == 0 ? 1 : projects.length;
   const totalPages = Math.ceil(totalItems / perPage);
   const indexOfLastItem = currentPage * perPage;
   const indexOfFirstItem = indexOfLastItem - perPage;
@@ -82,25 +82,31 @@ export const ProjectContent = () => {
             </tr>
           </thead>
           <tbody>
-            {Array.isArray(projects) &&
-              currentItems.map((project, index) => {
-                const rowNumber = (currentPage - 1) * perPage + index + 1;
-                return (
-                  <tr key={project.id}>
-                    <td>{rowNumber}</td>
-                    <td>{project.title}</td>
-                    <td className="td-category">
-                      {project.category.category}
-                    </td>
-                    <td>{project.status}</td>
-                    <td>
-                      {project.maintenance_active
-                        ? 'Under Maintenance'
-                        : 'No More Active'}
-                    </td>
-                  </tr>
-                );
-              })}
+            {projects.length === 0 ? (
+              <tr>
+                <td colSpan={5}>No Projects Found</td>
+              </tr>
+            ) :
+              (Array.isArray(projects) &&
+                currentItems.map((project, index) => {
+                  const rowNumber = (currentPage - 1) * perPage + index + 1;
+                  return (
+                    <tr key={project.id}>
+                      <td>{rowNumber}</td>
+                      <td>{project.title}</td>
+                      <td className="td-category">
+                        {project.category.category}
+                      </td>
+                      <td>{project.status}</td>
+                      <td>
+                        {project.maintenance_active
+                          ? 'Under Maintenance'
+                          : 'No More Active'}
+                      </td>
+                    </tr>
+                  );
+                })
+              )}
           </tbody>
         </table>
         <div className="pagination">

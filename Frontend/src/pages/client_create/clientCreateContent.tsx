@@ -82,10 +82,6 @@ export const ClientCreateContent: React.FC = () => {
       });
   };
 
-  if (isLoading) {
-    return <p className="loading"></p>
-  }
-
   return (
     <>
       <div className="register add-middle">
