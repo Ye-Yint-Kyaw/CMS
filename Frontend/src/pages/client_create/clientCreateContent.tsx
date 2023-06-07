@@ -17,14 +17,13 @@ export const ClientCreateContent: React.FC = () => {
   const [password_confirmation] = useState<string>("0000000000");
   const [errors, setErrors] = useState<any>({});
   const [errMsg, setErrMsg] = useState<string>('');
-  const [isLoading, setLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const navigate = useNavigate();
 
   const handleClientCreate = (e: React.FormEvent) => {
     e.preventDefault();
     setErrors({});
-    setLoading(true);
 
     let validationErrors: any = {};
     if (name.trim() === "") {
@@ -45,7 +44,6 @@ export const ClientCreateContent: React.FC = () => {
 
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
-      setLoading(false);
       return;
     }
 
@@ -78,9 +76,12 @@ export const ClientCreateContent: React.FC = () => {
           setErrMsg('An error has occurred during the API request.');
         }
       }).finally(() => {
-        setLoading(false);
+
       });
   };
+  // if (isLoading) {
+  //   return <div className="l-width"><p className="loading"></p></div>
+  // }
 
   return (
     <>
